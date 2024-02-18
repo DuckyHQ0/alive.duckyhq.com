@@ -54,7 +54,7 @@ export default function Nav() {
           About
         </Link>
         <Link
-          href={"https://github.com/DuckyHQ0"}
+          href={"https://www.twitch.tv/dukcccc"}
           className="text-sub hover:text-selected active:text-selected/75 duration-150"
         >
           Twitch
