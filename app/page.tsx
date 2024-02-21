@@ -110,18 +110,29 @@ export default function Home() {
         <div className="w-full flex flex-col p-64 gap-24 max-[580px]:p-32 max-[580px]:gap-24 h-fit items-end">
           <h2 className="text-2 font-medium text-right">Live Streams</h2>
           <p className="text-body text-right leading-[220%]">
-            dukc streams every {sunday} and {thursday} <br />
-            The dates are local to your timezone. Current game: Unknown
+            dukc streams every {sunday} and {thursday} on Twitch. <br />
+            The vods, and clips are uploaded to YouTube. <br />
+            The dates are local to your timezone. Current game: Valheim
           </p>
 
-          <Link
-            href={"https://www.twitch.tv/dukcccc"}
-            className="bg-purple/75 border-stroke-2 text-white hover:bg-purple active:bg-purple/50 disabled:bg-purple/25
+          <div className="flex flex-wrap gap-12">
+            <Link
+              href={"https://www.twitch.tv/dukcccc"}
+              className="bg-purple/75 border-stroke-2 text-white hover:bg-purple active:bg-purple/50 disabled:bg-purple/25
         text-body border w-fit h-[42px] shadow-fg flex items-center gap-6 ease-out duration-150 px-24 rounded-in
         hover:-translate-y-[2px] active:translate-y-6 disabled:cursor-not-allowed disabled:text-white/30"
-          >
-            Twitch
-          </Link>
+            >
+              Twitch
+            </Link>
+            <Link
+              href={"https://www.youtube.com/@dukclive"}
+              className="bg-red/75 border-stroke-2 text-white hover:bg-red active:bg-red/50 disabled:bg-red/25
+        text-body border w-fit h-[42px] shadow-fg flex items-center gap-6 ease-out duration-150 px-24 rounded-in
+        hover:-translate-y-[2px] active:translate-y-6 disabled:cursor-not-allowed disabled:text-white/30"
+            >
+              YouTube
+            </Link>
+          </div>
         </div>
       </div>
       <div

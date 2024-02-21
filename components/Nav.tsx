@@ -59,6 +59,12 @@ export default function Nav() {
         >
           Twitch
         </Link>
+        <Link
+          href={"https://www.duckyhq.com"}
+          className="text-sub hover:text-selected active:text-selected/75 duration-150"
+        >
+          DuckyHQ
+        </Link>
       </motion.div>
     </motion.nav>
   );
