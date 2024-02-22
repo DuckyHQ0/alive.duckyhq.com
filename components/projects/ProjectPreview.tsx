@@ -38,6 +38,7 @@ export default function ProjectPreview(props: ProjectMetadata) {
           <h3 className="text-3 w-full font-medium max-[540px]:text-body">
             {props.title}
           </h3>
+          <p className="text-sub w-full">{props.type}</p>
         </Link>
       </Tilt>
     </motion.div>

@@ -1,10 +1,9 @@
 ---
 title: "DuckyHQ Labs"
+type: "Minecraft Building Project"
 date: "2024-02-17"
 image: "https://i.imgur.com/KPn6TSE.png"
 ---
-
-# DuckyHQ Labs
 
 Coming soon.
 

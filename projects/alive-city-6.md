@@ -1,10 +1,9 @@
 ---
 title: "Alive City 6"
+type: "Minecraft Building Project"
 date: "2024-02-17"
 image: "https://i.imgur.com/h3FBYUO.png"
 ---
-
-# Alive City 6
 
 Coming soon.
 

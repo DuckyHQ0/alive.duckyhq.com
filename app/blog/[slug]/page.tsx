@@ -1,12 +1,12 @@
 import fs from "fs";
-import Markdown from "markdown-to-jsx";
-import getProjectMetadata from "../../../components/projects/getProjectMetadata";
-import matter from "gray-matter";
 import Image from "next/image";
+import Markdown from "markdown-to-jsx";
+import getBlogMetadata from "../../../components/blog/getBlogMetadata";
+import matter from "gray-matter";
 import moment from "moment";
 
-const getProjectContent = (slug: string) => {
-  const folder = "projects/";
+const getBlogContent = (slug: string) => {
+  const folder = "blog/";
   const file = `${folder}${slug}.md`;
   const content = fs.readFileSync(file, "utf8");
   const matterResult = matter(content);
@@ -21,15 +21,15 @@ const getProjectContent = (slug: string) => {
 };
 
 export const generateStaticParams = async () => {
-  const projects = getProjectMetadata();
-  return projects.map((project) => ({
-    slug: project.slug,
+  const blogs = getBlogMetadata();
+  return blogs.map((blog) => ({
+    slug: blog.slug,
   }));
 };
 
-export default function Project(props: any) {
+export default function Blog(props: any) {
   const slug = props.params.slug;
-  const { content, image, date, author, type, title } = getProjectContent(slug);
+  const { content, image, date, author, type, title } = getBlogContent(slug);
   return (
     <div className="flex flex-col gap-64 max-[600px]:gap-36 items-center align-middle p-48 mt-128 border border-stroke-1 rounded-out max-w-[1300px] min-h-screen w-full">
       <div className="flex flex-col gap-48 max-[600px]:gap-32">

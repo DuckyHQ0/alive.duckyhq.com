@@ -1,7 +1,8 @@
-export interface ProjectMetadata {
+export interface BlogMetadata {
   title: string;
-  image: string;
   type: string;
+  image: string;
+  author: string;
   date: string;
   slug: string;
 }

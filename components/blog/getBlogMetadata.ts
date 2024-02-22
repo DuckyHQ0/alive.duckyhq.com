@@ -1,26 +1,28 @@
 import fs from "fs";
 import matter from "gray-matter";
-import { ProjectMetadata } from "./ProjectMetadata";
+import { BlogMetadata } from "./BlogMetadata";
 
-const getProjectMetadata = (): ProjectMetadata[] => {
-  const folder = "projects/";
+const getBlogMetadata = (): BlogMetadata[] => {
+  const folder = "blog/";
   const files = fs.readdirSync(folder);
-  const markdownProjects = files.filter((file) => file.endsWith(".md"));
+  const markdownBlogs = files.filter((file) => file.endsWith(".md"));
 
-  const projects = markdownProjects
+  const blogs = markdownBlogs
     .map((filename) => {
-      const fileContents = fs.readFileSync(`projects/${filename}`, "utf8");
+      const fileContents = fs.readFileSync(`blog/${filename}`, "utf8");
       const matterResult = matter(fileContents);
       return {
         title: matterResult.data.title,
-        image: matterResult.data.image,
         type: matterResult.data.type,
+        image: matterResult.data.image,
+        author: matterResult.data.author,
         date: matterResult.data.date,
         slug: filename.replace(".md", ""),
       };
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  return projects;
+
+  return blogs;
 };
 
-export default getProjectMetadata;
+export default getBlogMetadata;

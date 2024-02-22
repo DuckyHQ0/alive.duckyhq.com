@@ -49,7 +49,7 @@ export default function Home() {
   const { sunday, thursday } = getNextStreamDates();
   return (
     <>
-      <div className="flex flex-col w-full py-[200px] gap-24">
+      <div className="flex flex-col max-w-[1300px] w-full py-[200px] gap-24">
         <div className="flex flex-col justify-center items-center">
           <h1
             className={`${hanson.className} text-[86px] max-[670px]:text-1 max-[450px]:text-2 leading-none`}
@@ -68,7 +68,7 @@ export default function Home() {
         </div>
       </div>
       <div
-        className="border border-stroke-1 rounded-out p-64 gap-32 flex flex-col max-[580px]:p-32 max-[580px]:gap-24"
+        className="border border-stroke-1 rounded-out max-w-[1300px] w-full p-64 gap-32 flex flex-col max-[580px]:p-32 max-[580px]:gap-24"
         id="projects"
       >
         <h2 className="text-2 font-medium">Projects</h2>
@@ -77,7 +77,7 @@ export default function Home() {
         </div>
       </div>
       <div
-        className="border border-stroke-1 rounded-out flex max-[880px]:flex-col overflow-clip"
+        className="border border-stroke-1 rounded-out max-w-[1300px] w-full flex max-[880px]:flex-col overflow-clip"
         id="about"
       >
         <div className="w-full flex flex-col p-64 gap-24 max-[580px]:p-32 max-[580px]:gap-24 h-fit">
@@ -97,7 +97,7 @@ export default function Home() {
         />
       </div>
       <div
-        className="border border-stroke-1 rounded-out flex max-[880px]:flex-col overflow-clip"
+        className="border border-stroke-1 rounded-out max-w-[1300px] w-full flex max-[880px]:flex-col overflow-clip"
         id="streams"
       >
         <Image
@@ -136,7 +136,7 @@ export default function Home() {
         </div>
       </div>
       <div
-        className="border border-stroke-1 rounded-out p-64 gap-32 flex flex-col max-[580px]:p-32 max-[580px]:gap-24"
+        className="border border-stroke-1 rounded-out max-w-[1300px] w-full p-64 gap-32 flex flex-col max-[580px]:p-32 max-[580px]:gap-24"
         id="downloads"
       >
         <h2 className="text-2 font-medium">Downloads</h2>
