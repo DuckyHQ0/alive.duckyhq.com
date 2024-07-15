@@ -1,5 +1,9 @@
 ---
+import { getEntryBySlug } from "astro:content";
+import Sidebar from "../components/docs/Sidebar";
+
 const { colour, title, type, category } = Astro.props;
+console.log(Astro.url.pathname);
 ---
 
 <div class="flex flex-col gap-12">
@@ -18,11 +22,7 @@ const { colour, title, type, category } = Astro.props;
     </div>
   </div>
   <div class="flex gap-12">
-    <div
-      class="p-24 flex flex-col gap-12 bg-fg-1 border border-stroke-1 rounded-out"
-    >
-      <h3 class="h3">Contents</h3>
-    </div>
+    <Sidebar currentSlug={Astro.url.pathname} client:load />
     <div class="bg-fg-1 border border-stroke-1 rounded-out p-64 w-full">
       <slot />
     </div>

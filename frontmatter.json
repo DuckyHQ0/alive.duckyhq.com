@@ -1,0 +1,117 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "blog",
+      "previewPath": "'blog'",
+      "pageBundle": false,
+      "clearEmpty": true,
+      "fields": [
+        {
+          "name": "title",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "image",
+          "type": "image",
+          "required": true,
+          "isPreviewImage": true
+        },
+        {
+          "name": "author",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "date",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "tags",
+          "type": "tags",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "docs",
+      "previewPath": "'docs'",
+      "pageBundle": false,
+      "clearEmpty": true,
+      "fields": [
+        {
+          "name": "title",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "colour",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "category",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "directory",
+          "type": "boolean",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "blog",
+      "path": "[[workspace]]/src/content/blog",
+      "contentTypes": [
+        "blog"
+      ]
+    },
+    {
+      "title": "docs",
+      "path": "[[workspace]]/src/content/docs",
+      "contentTypes": [
+        "docs"
+      ]
+    },
+    {
+      "path": "[[workspace]]/src/content/docs/alive-city"
+    },
+    {
+      "path": "[[workspace]]/src/content/docs/alive-city/energy-power"
+    },
+    {
+      "path": "[[workspace]]/src/content/docs/alive-city/city-design"
+    },
+    {
+      "path": "[[workspace]]/src/content/docs/alive-city/energy-power/production"
+    }
+  ],
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.git.enabled": true
+}

@@ -1,57 +1,15 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import { getCollection } from "astro:content";
-import { ListItem, ListItemCollapsible } from "../../components/ListItem";
-
-const docs = await getCollection("docs");
-
-function renderItems(items, parentSlug = "") {
-  const children = items.filter((item) =>
-    item.slug.startsWith(`${parentSlug}/`)
-  );
-
-  return (
-    <ul>
-      {children.map((item) => (
-        <li>
-          {item.data.title}
-          {renderItems(items, item.slug)}
-        </li>
-      ))}
-    </ul>
-  );
-}
+import DocsLayout from "../../layouts/DocsLayout.astro";
 ---
 
 <MainLayout title="Alive - Docs">
-  <div class="flex flex-col gap-12">
-    <div
-      class="rounded-out border border-stroke-1 h-[45vh] overflow-clip p-64 flex flex-col justify-between"
-    >
-      <div class="flex gap-24">
-        <p class="body" id="category">Documentation</p>
-        <p class="body" id="type">Home</p>
-      </div>
-      <h1 id="title" class="font-hanson text-[92px] w-full leading-none">
-        Docs
-      </h1>
-      <div
-        class="absolute -z-10 w-[400px] h-[450px] rounded-[100%] self-end blur-[10vmax] opacity-50 animate-rotate-slow"
-        style=`background-color: #00ffff;`
-        id="accent"
-      >
-      </div>
-    </div>
-    <div class="flex gap-12">
-      <div
-        class="p-24 flex flex-col gap-12 bg-fg-1 w-[35%] border border-stroke-1 rounded-out"
-      >
-        <h3 class="h3">Contents</h3>
-        <ul>
-          {renderItems(docs)}
-        </ul>
-      </div>
-      <div class="bg-fg-1 border border-stroke-1 rounded-out p-64 w-full"></div>
-    </div>
-  </div>
+  <DocsLayout
+    title="Docs"
+    type="Home"
+    category="Documentation"
+    colour="#0DB7FF"
+  >
+    <h1 class="h1">hi</h1>
+  </DocsLayout>
 </MainLayout>
