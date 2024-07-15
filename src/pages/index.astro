@@ -1,0 +1,51 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Button } from "../components/Button";
+---
+
+<MainLayout title="Alive">
+  <script>
+    import VanillaTilt from "vanilla-tilt";
+  </script>
+  <section
+    id="landing"
+    class="flex flex-col justify-center items-center gap-32 h-[88vh] p-64 border border-stroke-1 rounded-out overflow-clip"
+  >
+    <h1 class="font-hanson text-[192px] text-white leading-none">Alive</h1>
+    <p class="body">Innovative gaming experiences.</p>
+    <div
+      class="absolute -z-10 w-[22vw] h-[50vh] rounded-[100%] bg-brand-gradient blur-[10vmax] opacity-50 animate-rotate-slow"
+    >
+    </div>
+  </section>
+  <section id="alive-city" class="grid grid-cols-2 gap-12">
+    <div
+      class="flex flex-col p-64 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
+    >
+      <h1 class="h1">Alive City</h1>
+      <p class="body">
+        An incredibally realistic and well documented conceptual Minecraft city.
+        This city will be all about detail, documenting real life city things,
+        creating in depth 3D models of control systems, and producing amazing
+        performing arts shows. In planning stages.
+      </p>
+      <div class="flex gap-12">
+        <div onclick="window.location.href='/alive-city';">
+          <Button>Learn More</Button>
+        </div>
+        <div onclick="window.location.href='/docs/alive-city';">
+          <Button colour="secondary">Documentation</Button>
+        </div>
+      </div>
+    </div>
+    <img
+      src="/assets/terrain2.png"
+      alt="Alive City 6"
+      class="rounded-out border border-stroke-1 tilt-image h-full w-full object-cover"
+      data-tilt
+      data-tilt-glare
+      data-tilt-max-glare="0.8"
+      data-tilt-perspective="1750"
+    />
+  </section>
+</MainLayout>

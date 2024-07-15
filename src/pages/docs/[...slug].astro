@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import DocsLayout from "../../layouts/DocsLayout.astro";
+
+export async function getStaticPaths() {
+  const docsEntries = await getCollection("docs");
+  return docsEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props as {
+  entry: {
+    [x: string]: any;
+    data: { title: String };
+  };
+};
+const { Content } = await entry.render();
+---
+
+<MainLayout title=`Alive - ${entry.data.title}`>
+  <h1>{entry.data.title}</h1>
+  <Content />
+</MainLayout>
