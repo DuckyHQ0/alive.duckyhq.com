@@ -1,6 +1,6 @@
 export default function Nav() {
   return (
-    <nav className="sticky top-0 max-w-[1000px] w-full justify-between backdrop-blur-fg-1 flex py-16 px-64 items-center rounded-out border border-stroke-1 bg-fg-1">
+    <nav className="sticky top-24 z-50 max-w-[1000px] w-full justify-between backdrop-blur-fg-1 flex py-16 px-64 items-center rounded-out border border-stroke-1 bg-fg-1">
       <a href="/" className="hover-effect-scale">
         <img src="/logo.svg" alt="Alive Logo" className="size-32" />
       </a>

@@ -13,7 +13,7 @@ function renderItems(items, parentSlug, currentSlug) {
   const children = findChildren(items, parentSlug);
 
   return (
-    <ul>
+    <ul className="flex flex-col gap-8">
       {children.map((item) => {
         const isDescendant = currentSlug.startsWith(`/docs/${item.slug}`);
 

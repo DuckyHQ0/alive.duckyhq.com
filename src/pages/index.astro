@@ -27,7 +27,7 @@ import { Button } from "../components/Button";
         An incredibally realistic and well documented conceptual Minecraft city.
         This city will be all about detail, documenting real life city things,
         creating in depth 3D models of control systems, and producing amazing
-        performing arts shows. In planning stages.
+        performing arts shows. In pre-alpha stages.
       </p>
       <div class="flex gap-12">
         <div onclick="window.location.href='/alive-city';">
@@ -38,14 +38,13 @@ import { Button } from "../components/Button";
         </div>
       </div>
     </div>
-    <img
-      src="/assets/terrain2.png"
-      alt="Alive City 6"
-      class="rounded-out border border-stroke-1 tilt-image h-full w-full object-cover"
+    <div
+      class="bg-[url('/assets/terrain2.png')] bg-cover rounded-out border border-stroke-1 tilt-image h-full w-full object-cover"
       data-tilt
       data-tilt-glare
-      data-tilt-max-glare="0.8"
+      data-tilt-max-glare="0.1"
       data-tilt-perspective="1750"
-    />
+    >
+    </div>
   </section>
 </MainLayout>

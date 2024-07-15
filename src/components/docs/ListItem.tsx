@@ -16,7 +16,11 @@ export const ListItemCollapsible = ({
 }) => {
   const [open, setOpen] = React.useState(defaultOpen);
   return (
-    <Collapsible.Root open={open} onOpenChange={setOpen}>
+    <Collapsible.Root
+      open={open}
+      onOpenChange={setOpen}
+      className={`flex flex-col ${open ? "gap-8" : "gap-0"}`}
+    >
       <div className="flex items-center justify-between">
         <a
           href={slug}
@@ -35,7 +39,7 @@ export const ListItemCollapsible = ({
         </Collapsible.Trigger>
       </div>
 
-      <Collapsible.Content className="flex flex-col gap-12 pl-24">
+      <Collapsible.Content className="flex flex-col gap-8 pl-24">
         {children}
       </Collapsible.Content>
     </Collapsible.Root>

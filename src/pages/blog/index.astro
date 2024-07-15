@@ -1,0 +1,48 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+
+const blogs = await getCollection("blog");
+console.log(blogs);
+---
+
+<MainLayout title="Alive">
+  <script>
+    import VanillaTilt from "vanilla-tilt";
+  </script>
+  <section
+    id="landing"
+    class="flex flex-col justify-center items-center gap-32 h-[88vh] p-64 border border-stroke-1 rounded-out overflow-clip"
+  >
+    <p class="body">Alive</p>
+    <h1 class="font-hanson text-[192px] text-white leading-none">Blog</h1>
+
+    <div
+      class="absolute -z-10 w-[22vw] h-[50vh] rounded-[100%] bg-brand-gradient blur-[10vmax] opacity-50 animate-rotate-slow"
+    >
+    </div>
+  </section>
+  <section id="blog-grid" class="grid grid-cols-2 gap-12">
+    {
+      blogs.map((blog) => (
+        <a
+          href={`/blog/${blog.slug}`}
+          class="p-32 pt-128 flex justify-between items-end bg-cover rounded-out border border-stroke-1"
+          style={`background-image: url('${blog.data.image}');`}
+          data-tilt
+          data-tilt-glare
+          data-tilt-max-glare="0.1"
+          data-tilt-perspective="1750"
+        >
+          <h1 class="h1">{blog.data.title}</h1>
+          <div class="flex flex-col gap-12">
+            <p class="subtext">{blog.data.date}</p>
+            {blog.data.tags.map((tag) => (
+              <p class="subtext">{tag}</p>
+            ))}
+          </div>
+        </a>
+      ))
+    }
+  </section>
+</MainLayout>
