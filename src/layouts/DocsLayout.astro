@@ -1,6 +1,8 @@
 ---
-import { getEntryBySlug } from "astro:content";
+import { getCollection } from "astro:content";
 import Sidebar from "../components/docs/Sidebar";
+
+const docs = await getCollection("docs");
 
 const { colour, title, type, category } = Astro.props;
 console.log(Astro.url.pathname);
@@ -8,22 +10,28 @@ console.log(Astro.url.pathname);
 
 <div class="flex flex-col gap-12">
   <div
-    class="rounded-out border border-stroke-1 h-[45vh] overflow-clip p-64 flex flex-col justify-between"
+    class="rounded-out border border-stroke-1 h-[45vh] overflow-clip p-64 max-[900px]:p-24 flex relative flex-col justify-between"
   >
-    <div class="flex gap-24">
+    <div class="flex flex-wrap gap-24">
       <p class="body">{category}</p>
       <p class="body">{type}</p>
     </div>
-    <h1 class="font-hanson text-[92px] w-full leading-none">{title}</h1>
+    <h1
+      class="font-hanson text-[92px] max-[900px]:text-[48px] max-[450px]:text-[36px] w-full leading-none"
+    >
+      {title}
+    </h1>
     <div
-      class="absolute -z-10 w-[22vw] h-[50vh] rounded-[100%] self-end blur-[10vmax] opacity-50 animate-rotate-slow"
+      class="absolute -z-10 w-[22vw] h-[30vw] rounded-[100%] self-end blur-[9vmax] opacity-50 animate-rotate-slow"
       style=`background-color: ${colour};`
     >
     </div>
   </div>
   <div class="flex gap-12">
-    <Sidebar currentSlug={Astro.url.pathname} client:load />
-    <div class="bg-fg-1 border border-stroke-1 rounded-out p-64 w-full">
+    <Sidebar currentSlug={Astro.url.pathname} client:load docs={docs} />
+    <div
+      class="bg-fg-1 border border-stroke-1 rounded-out p-64 max-[830px]:p-24 max-[830px]:px-8 w-full"
+    >
       <slot />
     </div>
   </div>

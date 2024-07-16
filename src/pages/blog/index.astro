@@ -3,7 +3,6 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
 const blogs = await getCollection("blog");
-console.log(blogs);
 ---
 
 <MainLayout title="Alive">
@@ -12,17 +11,24 @@ console.log(blogs);
   </script>
   <section
     id="landing"
-    class="flex flex-col justify-center items-center gap-32 h-[88vh] p-64 border border-stroke-1 rounded-out overflow-clip"
+    class="flex flex-col justify-center items-center gap-32 h-[88vh] p-24 border border-stroke-1 rounded-out overflow-clip"
   >
     <p class="body">Alive</p>
-    <h1 class="font-hanson text-[192px] text-white leading-none">Blog</h1>
+    <h1
+      class="font-hanson text-[192px] text-white leading-none max-[670px]:text-[128px] max-[460px]:text-[72px]"
+    >
+      Blog
+    </h1>
 
     <div
       class="absolute -z-10 w-[22vw] h-[50vh] rounded-[100%] bg-brand-gradient blur-[10vmax] opacity-50 animate-rotate-slow"
     >
     </div>
   </section>
-  <section id="blog-grid" class="grid grid-cols-2 gap-12">
+  <section
+    id="blog-grid"
+    class="grid grid-cols-2 max-[830px]:grid-cols-1 gap-12"
+  >
     {
       blogs.map((blog) => (
         <a

@@ -28,23 +28,25 @@ const { Content } = await entry.render();
 
 <MainLayout title=`Alive - ${entry.data.title}`>
   <div
-    class="rounded-out border bg-cover bg-clip-padding border-stroke-1 h-[45vh] overflow-clip p-64 flex flex-col justify-between"
+    class="rounded-out border bg-cover bg-clip-padding border-stroke-1 h-[45vh] overflow-clip p-64 max-[900px]:p-24 flex flex-col justify-between"
     style=`background-image:  linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, #000 100%), url("${entry.data.image}");
 
 ;`
   >
-    <div class="flex gap-24">
+    <div class="flex flex-wrap gap-24 gap-y-8">
       <p class="body">{entry.data.date}</p>
       <p class="body">{entry.data.author}</p>
       {entry.data.tags.map((tag) => <p class="body">{tag}</p>)}
     </div>
-    <h1 class="font-hanson text-[92px] w-full leading-none">
+    <h1
+      class="font-hanson text-[92px] max-[900px]:text-[48px] max-[450px]:text-[36px] w-full leading-none"
+    >
       {entry.data.title}
     </h1>
   </div>
   <div class="flex gap-12">
     <div
-      class="bg-fg-1 border border-stroke-1 rounded-out p-64 w-full flex justify-center"
+      class="bg-fg-1 border border-stroke-1 rounded-out p-64 max-[900px]:p-24 w-full flex justify-center"
     >
       <Prose><Content /></Prose>
     </div>

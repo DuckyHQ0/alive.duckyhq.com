@@ -8,9 +8,11 @@ import MainLayout from "../layouts/MainLayout.astro";
   </script>
   <section
     id="landing"
-    class="flex flex-col justify-end items-start gap-32 h-[88vh] p-64 border border-stroke-1 rounded-out overflow-clip"
+    class="flex flex-col relative justify-end items-start gap-32 h-[88vh] p-64 max-[800px]:p-24 border border-stroke-1 rounded-out overflow-clip"
   >
-    <h1 class="font-hanson text-[192px] text-white leading-none">
+    <h1
+      class="font-hanson text-[192px] max-[800px]:text-[86px] max-[370px]:text-[64px] text-white leading-none"
+    >
       Alive <br /> City
     </h1>
     <p class="body">
@@ -21,7 +23,10 @@ import MainLayout from "../layouts/MainLayout.astro";
     >
     </div>
   </section>
-  <section id="vision" class="grid grid-cols-2 gap-12">
+  <section
+    id="vision"
+    class="grid grid-cols-2 gap-12 max-[800px]:grid-cols-1 max-[800px]:grid-rows-2"
+  >
     <div
       class="flex flex-col p-64 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
     >
@@ -42,7 +47,10 @@ import MainLayout from "../layouts/MainLayout.astro";
       data-tilt-perspective="1750"
     />
   </section>
-  <section id="Theme" class="grid grid-cols-2 gap-12">
+  <section
+    id="Theme"
+    class="grid grid-cols-2 gap-12 max-[800px]:grid-cols-1 max-[800px]:grid-rows-2"
+  >
     <img
       src="/assets/gradient-03.png"
       alt="Alive City 6"
@@ -53,7 +61,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       data-tilt-perspective="1750"
     />
     <div
-      class="flex flex-col p-64 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
+      class="flex flex-col p-64 max-[800px]:p-24 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
     >
       <h1 class="h1">Theme</h1>
       <p class="body">
@@ -64,9 +72,12 @@ import MainLayout from "../layouts/MainLayout.astro";
       </p>
     </div>
   </section>
-  <section id="alive-city" class="grid grid-cols-2 gap-12">
+  <section
+    id="alive-city"
+    class="grid grid-cols-2 gap-12 max-[800px]:grid-cols-1 max-[800px]:grid-rows-2"
+  >
     <div
-      class="flex flex-col p-64 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
+      class="flex flex-col p-64 max-[800px]:p-24 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
     >
       <h1 class="h1">Realistic & Detailed</h1>
       <p class="body">
@@ -91,7 +102,7 @@ import MainLayout from "../layouts/MainLayout.astro";
   </section>
   <section
     id="alpha"
-    class="rounded-out border border-stroke-1 bg-fg-1 p-64 flex flex-col gap-12 items-center"
+    class="rounded-out border border-stroke-1 bg-fg-1 p-64 max-[800px]:p-24 flex flex-col gap-12 items-center"
   >
     <h1 class="h1">Pre-Alpha</h1>
     <p class="body text-center">

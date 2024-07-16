@@ -10,15 +10,22 @@ import MainLayout from "../layouts/MainLayout.astro";
     id="landing"
     class="flex flex-col justify-center items-center gap-32 h-[88vh] p-64 border border-stroke-1 rounded-out overflow-clip"
   >
-    <h1 class="font-hanson text-[128px] text-white leading-none">About</h1>
+    <h1
+      class="font-hanson text-[128px] max-[630px]:text-[72px] max-[370px]:text-[64px] text-white leading-none"
+    >
+      About
+    </h1>
     <div
       class="absolute -z-10 w-[22vw] h-[50vh] rounded-[100%] bg-brand-gradient blur-[10vmax] opacity-50 animate-rotate-slow"
     >
     </div>
   </section>
-  <section id="present" class="grid grid-cols-2 gap-12">
+  <section
+    id="present"
+    class="grid grid-cols-2 gap-12 max-[800px]:grid-cols-1 max-[800px]:grid-rows-2"
+  >
     <div
-      class="flex flex-col p-64 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
+      class="flex flex-col p-64 max-[800px]:p-24 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
     >
       <h1 class="h1">Present</h1>
       <p class="body">
@@ -36,7 +43,10 @@ import MainLayout from "../layouts/MainLayout.astro";
       data-tilt-perspective="1750"
     />
   </section>
-  <section id="past" class="grid grid-cols-2 gap-12">
+  <section
+    id="past"
+    class="grid grid-cols-2 gap-12 max-[800px]:grid-cols-1 max-[800px]:grid-rows-2"
+  >
     <img
       src="/assets/gradient-02.png"
       alt="Alive City 6"
@@ -47,7 +57,7 @@ import MainLayout from "../layouts/MainLayout.astro";
       data-tilt-perspective="1750"
     />
     <div
-      class="flex flex-col p-64 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
+      class="flex flex-col p-64 max-[800px]:p-24 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
     >
       <h1 class="h1">Past</h1>
       <p class="body">
@@ -59,9 +69,12 @@ import MainLayout from "../layouts/MainLayout.astro";
       </p>
     </div>
   </section>
-  <section id="past" class="grid grid-cols-2 gap-12">
+  <section
+    id="past"
+    class="grid grid-cols-2 gap-12 max-[800px]:grid-cols-1 max-[800px]:grid-rows-2"
+  >
     <div
-      class="flex flex-col p-64 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
+      class="flex flex-col p-64 max-[800px]:p-24 gap-24 bg-fg-1 border border-stroke-1 rounded-out"
     >
       <h1 class="h1">Origins</h1>
       <p class="body">
