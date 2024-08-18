@@ -11,7 +11,7 @@ const blog = defineCollection({
   }),
 });
 
-const docs = defineCollection({
+const wiki = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
@@ -24,5 +24,5 @@ const docs = defineCollection({
 
 export const collections = {
   blog: blog,
-  docs: docs,
+  wiki: wiki,
 };

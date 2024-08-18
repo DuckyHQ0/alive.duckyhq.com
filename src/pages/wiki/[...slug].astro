@@ -1,12 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
-import DocsLayout from "../../layouts/DocsLayout.astro";
+import WikiLayout from "../../layouts/WikiLayout.astro";
 import Prose from "../../components/Prose.astro";
 
+const wiki = await getCollection("wiki");
+
 export async function getStaticPaths() {
-  const docsEntries = await getCollection("docs");
-  return docsEntries.map((entry) => ({
+  const wikiEntries = await getCollection("wiki");
+  return wikiEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -22,12 +24,13 @@ const { Content } = await entry.render();
 ---
 
 <MainLayout title=`Alive - ${entry.data.title}`>
-  <DocsLayout
+  <WikiLayout
     colour={entry.data.colour}
     category={entry.data.category}
     type={entry.data.type}
     title={entry.data.title}
+    wiki={wiki}
   >
     <Prose><Content /></Prose>
-  </DocsLayout>
+  </WikiLayout>
 </MainLayout>

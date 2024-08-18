@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import WikiLayout from "../../layouts/WikiLayout.astro";
+
+const wiki = await getCollection("wiki");
+---
+
+<MainLayout title="Alive - Wiki">
+  <WikiLayout
+    title="Wiki"
+    type="Home"
+    category="Wiki"
+    colour="#0DB7FF"
+    wiki={wiki}
+  >
+    <p class="body">Welcome to the Alive Wiki! This will contain documentation for Alive's productions.</p>
+    <div class="grid grid-cols-2 gap-24">
+    <a href="/wiki/alive-city/" class="flex flex-col gap-24 p-32 bg-fg-2 shadow-fg-2 rounded-in border border-stroke-2 hover-effect-scale">
+      <h2 class="h2">Alive City</h2>
+      <p class="body">Detailed doucmentation for systems, city design, and products for Alive City.</p>
+    </a>
+    </div>
+  </WikiLayout>
+</MainLayout>

@@ -17,9 +17,9 @@ function renderItems(items, parentSlug, currentSlug, isSidebarOpen) {
       }`}
     >
       {children.map((item) => {
-        const isDescendant = currentSlug.startsWith(`/docs/${item.slug}`);
+        const isDescendant = currentSlug.startsWith(`/wiki/${item.slug}`);
 
-        const isSelected = `/docs/${item.slug}` === currentSlug;
+        const isSelected = `/wiki/${item.slug}` === currentSlug;
         const isOpen = isSelected || isDescendant;
 
         return (
@@ -27,7 +27,7 @@ function renderItems(items, parentSlug, currentSlug, isSidebarOpen) {
             {item.data.directory ? (
               <ListItemCollapsible
                 text={item.data.title}
-                slug={`/docs/${item.slug}`}
+                slug={`/wiki/${item.slug}`}
                 defaultOpen={isOpen}
                 selected={isSelected}
               >
@@ -37,7 +37,7 @@ function renderItems(items, parentSlug, currentSlug, isSidebarOpen) {
               <ListItem
                 selected={isSelected}
                 text={item.data.title}
-                slug={`/docs/${item.slug}`}
+                slug={`/wiki/${item.slug}`}
               />
             )}
           </li>
@@ -47,11 +47,11 @@ function renderItems(items, parentSlug, currentSlug, isSidebarOpen) {
   );
 }
 
-export default function Sidebar({ currentSlug, docs }) {
+export default function Sidebar({ currentSlug, wiki }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <div
-      className={`p-24 flex flex-col gap-12 bg-fg-1 min-[830px]:w-[360px] ${
+      className={` p-24 flex flex-col gap-12 bg-fg-1 min-[830px]:w-[360px] ${
         isSidebarOpen
           ? "max-[830px]:w-[90vw] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-[830px]:p-16"
           : "max-[830px]:w-fit max-[830px]:p-4"
@@ -72,7 +72,7 @@ export default function Sidebar({ currentSlug, docs }) {
           {isSidebarOpen ? <XIcon /> : <Bars3Icon />}
         </button>
       </div>
-      {renderItems(docs, "", currentSlug, isSidebarOpen)}
+      {renderItems(wiki, "", currentSlug, isSidebarOpen)}
       <button
         onClick={() => {
           setIsSidebarOpen(!isSidebarOpen);

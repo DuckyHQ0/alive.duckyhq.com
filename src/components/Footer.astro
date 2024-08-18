@@ -1,9 +1,13 @@
+---
+import { Image } from "astro:assets";
+---
+
 <footer
   class="rounded-out border border-stroke-1 px-64 max-[500px]:px-24 py-24 pt-32 flex max-[500px]:flex-col max-[500px]:gap-16 max-[500px]:justify-center justify-between items-center"
 >
   <div class="flex gap-16 items-center max-[500px]:flex-col">
     <a href="/" class="hover-effect-scale">
-      <img src="/logo.svg" alt="Alive Logo" class="size-32" />
+      <Image src="/logo.svg" alt="Alive Logo" class="size-32" width={64} height={64} />
     </a>
     <div class="flex flex-col gap-0 max-[500px]:items-center">
       <h3 class="h3">Alive</h3>

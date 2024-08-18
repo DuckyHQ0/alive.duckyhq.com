@@ -11,7 +11,7 @@ export default function Nav() {
     { text: "Home", link: "/" },
     { text: "About", link: "/about" },
     { text: "Alive City", link: "/alive-city" },
-    { text: "Docs", link: "/docs" },
+    { text: "Wiki", link: "/wiki" },
     { text: "Blog", link: "/blog" },
   ];
   return (
